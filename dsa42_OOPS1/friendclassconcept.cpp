@@ -7,7 +7,7 @@ class A{
      private:
      int data;
 
-     friend class B;
+     friend class B;    // where class B is friend class of A so it can accesss the private members of class A
 
      A(){
         data=6;
