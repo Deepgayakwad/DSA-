@@ -8,36 +8,30 @@ public:
         for(int i=0;i<s.size();i++){
             mpp[s[i]]++;
         }
-
+        // if characters in map are same 
         if(mpp.size()==1){
-            auto it=mpp.begin();
-
-            return it->second;
+           return s.size();
         }
 
+        int length=0;
+        bool hasOdd=false;
+
+        // & is used to change the actual value in map
         for(auto& it:mpp){
-            if((it.second)%2!=0 && it.second!=1){
-                it.second--;
+            if((it.second)%2==0){
+                length+=it.second;
+            }
+            else{
+                length+=it.second-1;
+                hasOdd=true;
             }
         }
 
-        // count odd count characters
-        int oddCount=0;
-        for(auto it:mpp){
-            if(it.second==1){
-                oddCount++;
-                break;
-            }
-        }
+       if(hasOdd){
+              length+=1;
+       }
         
-        int evenCount=0;
-        for(auto it:mpp){
-            if((it.second)%2==0){
-                evenCount+=it.second;
-            }
-        }
-        
-      return evenCount+oddCount;
+      return length ;
 
         
     }
