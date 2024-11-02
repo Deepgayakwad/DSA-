@@ -71,3 +71,26 @@ bool searchWord(TrieNode* root, string word){
     // recursive call
    return searchWord(child,word.substr(1));
 }
+
+int main(){
+
+    TrieNode* root = new TrieNode('-');
+
+    insertWord(root,"coding");
+    insertWord(root,"code");
+    insertWord(root,"coder");
+    insertWord(root,"codehelp");
+    insertWord(root,"baba");
+    insertWord(root,"baby");
+    insertWord(root,"babbar");
+
+    cout<<" searching "<<endl;
+
+    if(searchWord(root,"coder")){
+        cout<<" present"<< endl;
+    }
+    else{
+        cout<< " absent "<<endl;
+    }
+ return 0;
+}
