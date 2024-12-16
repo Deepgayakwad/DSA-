@@ -29,7 +29,7 @@ int main(){
          cout<<" empty"<<endl;
     }
     else{
-        cout<<"empty"<<endl;
+        cout<<" not empty"<<endl;
     }
        return 0;
 }
