@@ -104,6 +104,32 @@ int solveByTopDownSO(string& a, string& b){
       return next[0];
 }
 
+int solveBySOwithoutchangingloop(string& a, string& b){
+        
+         vector<int>currRow(b.length()+1,0);
+         vector<int>nextRow(b.length()+1,0);
+
+         for(int i=a.size()-1;i>=0;i--){
+              for(int j=b.size()-1;j>=0;j--){
+                    int ans=0;
+                if(a[i]==b[j]){
+                    ans=1+nextRow[j+1];
+                }
+                else{  
+                    ans=0+max(currRow[j+1],nextRow[j]);
+                }
+
+                 currRow[j]=ans;
+                    
+              }
+
+              // shifting do not forgive 
+              nextRow=currRow;
+         }
+
+         return nextRow[0];
+  }
+
 int main(){
 
     
@@ -129,9 +155,14 @@ int main(){
     //   cout<<"length of common subsequence is :"<<ans3<<endl;
 
 
-    // solve By Using Space optimization 
-    int ans4=solveByTopDownSO(text1,text2);
-     cout<<"length of common subsequence is :"<<ans4<<endl;
+//     // solve By Using Space optimization 
+//     int ans4=solveByTopDownSO(text1,text2);
+//      cout<<"length of longest common subsequence is :"<<ans4<<endl;
+
+     // solve by using space optimization without  changing the loop
+     
+     int ans5=solveBySOwithoutchangingloop(text1,text2);
+       cout<<"length of longest common subsequence is :"<<ans5<<endl;
 
 
 
