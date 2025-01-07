@@ -22,7 +22,7 @@ public:
                       
                       if(len!=0){
                           len=LPS[len-1];
-                         i--;
+                         i--;   // IMP step 
                       }
                       else{
                         LPS[i]=0;
