@@ -34,8 +34,8 @@ public:
 
 
            // step 2 to apply the KMP algo
-           int i=0; // put on pattern string 
-           int j=0; // put on text string 
+           int i=0; // put on text string 
+           int j=0; // put on pattern string 
 
           
 
